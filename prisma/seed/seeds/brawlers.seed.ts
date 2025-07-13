@@ -14,7 +14,7 @@ export async function seedBrawlers() {
 
     console.log("🌱 Seeding brawlers...");
 
-    const filePath = path.resolve(__dirname, '../../../brawlers.json'); // ajuste se necessário
+    const filePath = path.resolve(__dirname, '../../../../brawlers.json'); 
     const jsonData = fs.readFileSync(filePath, 'utf-8');
     const brawlers = JSON.parse(jsonData) as Array<{
         name: string;
