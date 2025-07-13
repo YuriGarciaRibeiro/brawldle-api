@@ -22,12 +22,17 @@ export class GameStatsService {
     return doc.save();
   }
 
+  async findAll(): Promise<GameStat[]> {
+    return this.gameStatModel.find().sort({ playedAt: -1 }).lean().exec();
+  } 
+
+
   async findByUser(userId: string): Promise<GameStat[]> {
-    return this.gameStatModel.find({ userId }).sort({ playedAt: -1 }).exec();
+    return this.gameStatModel.find({ userId }).sort({ playedAt: -1 }).lean().exec();
   }
 
   async userStreak(userId: string): Promise<number> {
-    const stats = await this.gameStatModel.find({ userId, won: true }).sort({ playedAt: -1 }).exec();
+    const stats = await this.gameStatModel.find({ userId, won: true }).sort({ playedAt: -1 }).lean().exec();
     let streak = 0;
 
     for (const stat of stats) {
