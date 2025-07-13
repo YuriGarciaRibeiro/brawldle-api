@@ -11,8 +11,7 @@ export class GetDailyBrawlerDto {
   @ApiProperty({
     description: "Date for the daily brawler",
     example: "2023-10-01T00:00:00.000Z",
-    type: String,
-    required: true,
+    type: Date,
   })
   date: Date;
 
@@ -20,13 +19,17 @@ export class GetDailyBrawlerDto {
     description: "Indicates if the daily brawler is active",
     example: true,
     type: Boolean,
-    required: true,
   })
   active: boolean;
 
   @ApiProperty({
     description: "Brawler details associated with the daily brawler",
-    type: Object, 
+    type: Object,
+    example: { // Added missing example
+      id: "brawler123",
+      name: "Shelly",
+      rarity: "Trophy Road"
+    }
   })
   brawler: any; 
 }

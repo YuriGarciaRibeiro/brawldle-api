@@ -8,6 +8,7 @@ export class CreateDailyBrawlerDto {
   })
   brawlerId: string;
 
+
   @ApiProperty({
     description: "Date for the daily brawler",
     example: "2023-10-01T00:00:00.000Z",

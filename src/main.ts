@@ -40,10 +40,6 @@ async function bootstrap() {
   await app.listen(process.env.PORT || 8080);
 }
 dotenv.config();
-//print variables
-console.log('Environment Variables:');
-console.log(`DATABASE_URL: ${process.env.DATABASE_URL}`);
-console.log(`MONGO_URI: ${process.env.MONGO_URI}`);
-console.log(`PORT: ${process.env.PORT || 8080}`);
+
 
 bootstrap();
